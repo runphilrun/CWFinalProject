@@ -1,0 +1,850 @@
+{\rtf1\ansi\ansicpg1251
+{\fonttbl\f0\fswiss\fcharset0 Arial;\f1\fmodern\fcharset0 Courier;}
+{\colortbl;\red128\green128\blue128;\red51\green51\blue204;}
+\margl1440\margr1440\vieww9000\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx792
+\tx8640\ql\qnatural\pardirnatural\pgnx720\pgny720
+\fs24\b1 Start\b0\fs20 \
+!You have one job.\
+[img[The-Stanley-Parable]]\
+\
+First name: \f1\cf1 <<textbox "$fname" "">>\cf0\f0 \
+Last name:  \f1\cf1 <<textbox "$lname" "">>\cf0\f0 \
+\f1\cf1 <\f1\cf1 <silently>\cf0\f0 >\cf0\f0 \
+\f1\cf1 <<if $fname is "">>\cf0\f0 \f1\cf1 <<set $fname = "Dana">>\cf0\f0 \f1\cf1 <\f1\cf1 </if>\cf0\f0 >\cf0\f0 \
+\f1\cf1 <<if $lname is "">>\cf0\f0 \f1\cf1 <<set $lname = "Moore">>\cf0\f0 \f1\cf1 <\f1\cf1 </if>\cf0\f0 >\cf0\f0 \
+\f1\cf1 <<set $username = "employee1794">>\cf0\f0 \
+\f1\cf1 <<set $password = "kQ8c-pCH4a-Nn$u">>\cf0\f0 \
+\f1\cf1 <\f1\cf1 </silently>\cf0\f0 >\cf0\f0 \
+\
+\f1\cf1 <<button "Begin." "intro">>\cf0\f0 \f1\cf1 <\f1\cf1 </button>\cf0\f0 >\cf0\f0 \
+\f1\cf1 <<cacheaudio "intromusic" "Audio/Kylian Rebour - Fields.mp3">>\cf0\f0 \
+\f1\cf1 <<audio "intromusic" volume .3 play>>\cf0\f0 \
+\
+\b Note:\b0  This is a work in progress. The core mechanics are (mostly) complete. Future versions will include more content and more polish. If you encounter a bug, use the back arrow (<-) in the top left corner and report it in your feedback notes. Thank you for playing!\
+\
+@@font-size:x-small;\
+Intro image: The Stanley Parable - Galactic Cafe\
+Intro music: Fields - Kylian Rebour\
+Sound effects: \f1 http://soundbible.com/\f0 \
+@@\
+\
+\fs24\b1 intro\b0\fs20 \
+It's autumn already. \
+\
+Rain beats against the windshield. You imagine it trying to steer you down the highway back to Indiana, but slipping against the glass despite its best efforts. Seattle rain smells different, too. You don't trust it the same way.\
+\
+\f1\cf1 <<linkappend "You take a left." t8n>>\cf0\f0 \
+\
+Margot said it would be good for you to get out of the house. \
+"You know I love you, $fname, but it's been almost six months since Eric. It's time to get up and do something for yourself," she said. Wrinkles in brows and bedsheets were all you ever made, you said. \
+\
+Two weeks later and here we are. New shirt, new shoes. You found a promising new job at company you'd never heard of, but Margot said that's pretty common nowadays. \
+\
+\f1\cf1 <<linkappend "Eric would have ruffled your neatly combed hair." t8n>>\cf0\f0 \
+\
+The GPS apathetically says you've arrived. It's a four-story office building, generic beyond belief. A sign above the door reads: \
+@@font-family:"Arial Black", Gadget, sans-serif;text-align:center;\
+DayRep Corporation\
+@@\
+\
+\b\cf2 \ul Go inside.\ulnone \cf0 \b0 \f1\cf1 <\f1\cf1 </linkappend>\cf0\f0 >\cf0\f0 \f1\cf1 <\f1\cf1 </linkappend>\cf0\f0 >\cf0\f0 \
+\
+\fs24\b1 nametag\b0\fs20 \
+\f1\cf1 <<audio "intromusic" fadeout>>\cf0\f0 \
+You speak with the receptionist at the front desk and she hands you a name tag attached to a lanyard. It shows a poorly lit photo of your groggy face and displays your name in bold letters.\
+\
+You slip the bright red lanyard over your neck and take a deep breath. \
+\
+\b\cf2 \ul Time for work.\ulnone \cf0 \b0 \
+\
+\
+\
+\fs24\b1 awkward\b0\fs20 \
+Kandice blinks.\
+\f1\cf1 <\f1\cf1 <timed 2s t8n>\cf0\f0 >\cf0\f0 \
+\
+...\
+\
+\
+\f1\cf1 <\f1\cf1 <next>\cf0\f0 >\cf0\f0 ...\
+\
+\
+\f1\cf1 <\f1\cf1 <next>\cf0\f0 >\cf0\f0 \f1\cf1 <<goto "office tour">>\cf0\f0 \
+\f1\cf1 <\f1\cf1 </timed>\cf0\f0 >\cf0\f0 \
+\
+\fs24\b1 papers\b0\fs20 \
+A neat stack of papers waiting to be read. A few rebels bear folded corners.\
+\
+\b\cf2 \ul Computer Account Information (email, printed)\ulnone \cf0 \b0 \
+\b\cf2 \ul New Hire Checklist (email, printed)\ulnone \cf0 \b0 \
+\f1\cf1 <<if $hb_ruined == false>>\cf0\f0 \b\cf2 \ul Employee Handbook (booklet, glossy)\ulnone \cf0 \b0 \
+\f1\cf1 <\f1\cf1 <else>\cf0\f0 >\cf0\f0 \b\cf2 \ul Employee Handbook (booklet, ruined)\ulnone \cf0 \b0 \
+\f1\cf1 <\f1\cf1 </if>\cf0\f0 >\cf0\f0 \
+\b\cf2 \ul (Return to desk)\ulnone \cf0 \b0 \
+\
+\fs24\b1 work.exe\b0\fs20 \
+!DayRep Document Viewer Client ($username)\
+\f1\cf1 <ul>\cf0\f0 \f1\cf1 <<if typeof($doclist) !== 'undefined' and $doclist.length > 0>>\cf0\f0 \\
+\f1\cf1 <<set $current_doc = $doclist.random()>>\cf0\f0 \\
+\f1\cf1 <li>\cf0\f0 Document ready for review: \f1\cf1 <<print $current_doc>>\cf0\f0 \f1\cf1 </li>\cf0\f0 \
+\f1\cf1 <p>\cf0\f0 >\f1\cf1 <<link "View document" $current_doc>>\cf0\f0 \f1\cf1 <\f1\cf1 </link>\cf0\f0 >\cf0\f0 \f1\cf1 </p>\cf0\f0 \\
+\f1\cf1 <\f1\cf1 <else>\cf0\f0 >\cf0\f0 \f1\cf1 <li>\cf0\f0 No new documents.\f1\cf1 </li>\cf0\f0 \
+\f1\cf1 <p>\cf0\f0 >\b\cf2 \ul Submit report\ulnone \cf0 \b0 \f1\cf1 </p>\cf0\f0 \\f1\cf1 <\f1\cf1 </if>\cf0\f0 >\cf0\f0 \\
+\f1\cf1 <p>\cf0\f0 >\b\cf2 \ul Refresh\ulnone \cf0 \b0 \f1\cf1 </p>\cf0\f0 \
+\f1\cf1 <p>\cf0\f0 >\b\cf2 \ul Home\ulnone \cf0 \b0 \f1\cf1 </p>\cf0\f0 \f1\cf1 </ul>\cf0\f0 \
+\
+\fs24\b1 StoryTitle\b0\fs20 \
+You have one job.\
+\
+\fs24\b1 office tour\b0\fs20 \
+"Alright then. Let's get you settled at your new desk." \
+\
+Kandice makes an about face and bobs down the bare white hallway. Her heels clack on the tile. \
+\
+She stops without warning and you stumble, your nose stopping inches from her thin, white hair. Kandice appears to be oblivious to the near collision. \
+\
+You notice a door to her left. It is windowless and painted to match the sterile walls. Kandice presses her thumb to a scanner next to it and instructs you to do the same. \
+\
+\b\cf2 \ul Press your thumb to the scanner.\ulnone \cf0 \b0 \
+\
+\fs24\b1 welcome\b0\fs20 \
+"Hi there! I'm Kandice with HR. Welcome to DayRep!"\
+\
+Kandice's hair is brilliantly white and frozen in place, almost as much as her smile. Her skin shimmers like plastic.\
+\
+She blinks, waiting for you to respond.\
+\
+\b\cf2 \ul Good afternoon.\ulnone \cf0 \b0 \
+\b\cf2 \ul Thanks!\ulnone \cf0 \b0 \
+\b\cf2 \ul (say nothing)\ulnone \cf0 \b0 \
+\
+\fs24\b1 desk\b0\fs20 \
+Gray vinyl, soft walls. Your computer hums gently under your desk. A laminated paper is taped to the outside of the cubicle. It reads "$fname $lname - Junior Acquisition Agent" in all capital letters.\
+\
+\b\cf2 \ul Sift through the papers on your desk.\ulnone \cf0 \b0 \
+\f1\cf1 <<if $loggedin is false and $haspcacct is true>>\cf0\f0 \b\cf2 \ul Log in to the computer.\ulnone \cf0 \b0 \f1\cf1 <<elseif $loggedin is true>>\cf0\f0 \b\cf2 \ul Use the computer.\ulnone \cf0 \b0 \
+\f1\cf1 <\f1\cf1 <else>\cf0\f0 >\cf0\f0 \b\cf2 \ul Log in to the computer.\ulnone \cf0 \b0 \f1\cf1 <\f1\cf1 </if>\cf0\f0 >\cf0\f0 \
+\
+\fs24\b1 computer account info\b0\fs20 \
+\f1\cf1 <p>\cf0\f0 \\
+!!Re: DayRep Computer Account Request [Ticket #93875]\
+----\
+|From: \b IT Helpdesk\b0  <helpdesk@dayrep.com> |	Fri, Oct 21, 2016 at 2:13 pm|\
+\
+When replying, type your text above this line.\
+Thank you for contacting the IT Helpdesk. Your support ticket has been created/updated with the following details:\
+\
+\b Ticket Number:\b0  93875\
+\b Title:\b0  DayRep Computer Account Request\
+\b Current Ticket Status:\b0  Closed\
+\
+Your computer account has been registered. Your corporate email is $username@dayrep.com\
+\
+Please log in to your DayRep computer account with the following credentials. The first time you log in, you will be prompted to change your password.\
+\
+>Username:	$username\
+>Password:	$password\
+\
+\b IMPORTANT:\b0  To help keep your personal information safe, DayRep recommends that you never give your password to anyone, including DayRep employees.\
+\
+Welcome to DayRep!\
+\
+----\
+__Click here to view Ticket in Browser__ (DayRep Computer Account required)\
+If you have any questions, contact the IT Helpdesk at (555) 421-8645 or in person in room 1113.\
+\
+@@color:red;\i Attention!\i0 @@\
+\u8226?	If this request is URGENT, call the IT Helpdesk referencing ticket # 93875 as soon as possible.\
+\u8226?	Replies to this email will automatically update this ticket.\
+\u8226?	Submit a __new request__ by sending a __new message__ rather than replying to this one.\f1\cf1 </p>\cf0\f0 \f1\cf1 <<set $haspcacct = true>>\cf0\f0  \
+\b\cf2 \ul (Go back)\ulnone \cf0 \b0 \
+\
+\fs24\b1 shining_shimmering_splendid.txt\b0\fs20 \
+\f1\cf1 <p>\cf0\f0 \\
+!!Scientists Turn Tequila into Diamonds\
+November 7, 2008 by Lisa Zyga \
+\
+(PhysOrg.com) -- Whoever thought that science was a dry subject might change their mind after learning about a new discovery in which tequila is turned into diamonds. A team of Mexican scientists found that the heated vapor from 80-proof (40% alcohol) tequila blanco, when deposited on a silicon or stainless steel substrate, can form diamond films.\
+The key to the surprising discovery is tequila's ratio of hydrogen, oxygen, and carbon, which lies within the "diamond growth region." The resulting diamond films could have inexpensive commercial applications as electrical insulators, say researchers Javier Morales, Luis Miguel Ap\u225?tiga, and V\u237?ctor Manuel Casta\u241?o from the National Autonomous University of Mexico (Morales is also with Nuevo Le\u243?n\u180?s Autonomous University).\
+\
+Originally, the scientists were experimenting with creating diamonds from organic solutions such as acetone, ethanol, and methanol. They found that diluting ethanol in water resulted in high quality diamond films. The scientists then noticed that the ideal compound of 40 percent ethanol and 60 percent water was similar to the proportion used in tequila.\
+"To dissipate any doubts, one morning on the way to the lab I bought a pocket-size bottle of cheap white tequila and we did some tests," Ap\u225?tiga said. "We were in doubt over whether the great amount of chemicals present in tequila, other than water and ethanol, would contaminate or obstruct the process, it turned out to be not so. The results were amazing, same as with the ethanol and water compound, we obtained almost spherical shaped diamonds of nanometric size. There is no doubt; tequila has the exact proportion of carbon, hydrogen and oxygen atoms necessary to form diamonds."\
+\
+In their experiments, the scientists grew the diamond films using "pulsed liquid injection chemical vapor deposition techniques." In a specially made device, they heated the liquid tequila to 280 \u186?C (536 \u186?F) to transform it into a gas. In a reaction chamber, they heated the gas to 800 \u186?C (1470 \u186?F) to break down its molecular structure, resulting in solid diamond crystals of about 100-400 nm. The crystals fell onto silicon or stainless steel trays, accumulating in a thin, uniform film. The high temperatures removed all of the tequila\u180?s carbon impurities to result in pure diamonds.\
+The final diamond film was hard and heat-resistant - properties that could make the diamond useful as coatings for cutting tools, high-power semiconductors, radiation detectors and optical-electronic devices, the scientists explained. They plan to begin industrial-scale applications around 2011, and hope to interest a tequila producer in widening its market beyond the traditional beverage.\
+\
+For now, the scientists are continuing to test different tequilas\u180? abilities to produce diamonds. They\u180?re also working on creating doped diamonds, which contain impurities, to serve as semiconductors.\
+\
+\b\cf2 \ul \u169? 2009 PhysOrg.com\ulnone \cf0 \b0 \f1\cf1 </p>\cf0\f0 \
+\f1\cf1 <table style="margin:auto">\cf0\f0 \f1\cf1 <tr>\cf0\f0 \f1\cf1 <td>\cf0\f0 \f1\cf1 <<button "Fake" "work.exe">>\cf0\f0 \f1\cf1 <<set $doclist.delete($current_doc)>>\cf0\f0 \f1\cf1 <\f1\cf1 </button>\cf0\f0 >\cf0\f0 \f1\cf1 </td>\cf0\f0 \f1\cf1 <td>\cf0\f0 \f1\cf1 <<button "Back" "work.exe">>\cf0\f0 \f1\cf1 <\f1\cf1 </button>\cf0\f0 >\cf0\f0 \f1\cf1 </td>\cf0\f0 \f1\cf1 <td>\cf0\f0 \f1\cf1 <<button "Real" "work.exe">>\cf0\f0 \f1\cf1 <<set $doclist.delete($current_doc)>>\cf0\f0 \f1\cf1 <\f1\cf1 </button>\cf0\f0 >\cf0\f0 \f1\cf1 </td>\cf0\f0 \f1\cf1 </tr>\cf0\f0 \f1\cf1 </table>\cf0\f0 \
+\
+\fs24\b1 autobiography.doc\b0\fs20 \
+Isabel groaned awake, brushed her teeth, put in contacts. The optometrist had said her left eye was worse. Even if she cared, Isabel couldn\u8217?t tell them apart. Better if the world was fuzzy anyway, she reasoned. Isabel dressed herself in a creased and wrinkled mosaic. Inhale, exhale, wrong key, gas light, parking lot, work. Pinned her nametag\u8212?right side, not left\u8212?uniform rules. Another day of empty well-wishing and fake smiles. It\u8217?s the only way to pay for the hospice.\
+\
+\f1\cf1 <table style="margin:auto">\cf0\f0 \f1\cf1 <tr>\cf0\f0 \f1\cf1 <td>\cf0\f0 \f1\cf1 <<button "Fake" "work.exe">>\cf0\f0 \f1\cf1 <<set $doclist.delete($current_doc)>>\cf0\f0 \f1\cf1 <\f1\cf1 </button>\cf0\f0 >\cf0\f0 \f1\cf1 </td>\cf0\f0 \f1\cf1 <td>\cf0\f0 \f1\cf1 <<button "Back" "work.exe">>\cf0\f0 \f1\cf1 <\f1\cf1 </button>\cf0\f0 >\cf0\f0 \f1\cf1 </td>\cf0\f0 \f1\cf1 <td>\cf0\f0 \f1\cf1 <<button "Real" "work.exe">>\cf0\f0 \f1\cf1 <<set $doclist.delete($current_doc)>>\cf0\f0 \f1\cf1 <\f1\cf1 </button>\cf0\f0 >\cf0\f0 \f1\cf1 </td>\cf0\f0 \f1\cf1 </tr>\cf0\f0 \f1\cf1 </table>\cf0\f0 \
+\
+\fs24\b1 StoryAuthor\b0\fs20 \
+Philip Linden\
+\
+\fs24\b1 cubicle\b0\fs20 \
+\f1\cf1 <<cacheaudio "scan" "Audio/Robot_blip-Marianne_Gagnon-120342607.wav">>\cf0\f0 The scanner pad is warm on your finger.\
+\f1\cf1 <<audio "scan" play>>\cf0\f0 \
+The door clicks and Kandice opens it for herself, letting it bump your shoulder with unexpected heft before you fully cross the threshold. \
+\
+Kandice stops in front of a cubicle in the center left of the room. You count about 20 other cubicles in here, but they're all vacant. \
+\
+"Here we are! Log into your computer as instructed and work your way down that list to get all set up. Let me know if you have any questions, and welcome to DayRep!"\
+\
+Kandice walks away before you have the chance to respond.\
+\
+\f1\cf1 <\f1\cf1 <timed 10s t8n>\cf0\f0 >\cf0\f0 \b\cf2 \ul Sit at your desk.\ulnone \cf0 \b0 \f1\cf1 <\f1\cf1 </timed>\cf0\f0 >\cf0\f0 \
+\
+\fs24\b1 afternoon\b0\fs20 \
+"Good \i morning\i0  to you, $fname! I guess someone could use another wake-up call!"\
+\
+Kandice laughs.\
+\
+\b\cf2 \ul (laugh)\ulnone \cf0 \b0 \
+\b\cf2 \ul (say nothing)\ulnone \cf0 \b0 \
+\
+\fs24\b1 pc\b0\fs20 \
+!DayRep Computer Terminal\
+\f1\cf1 <ul>\cf0\f0 \f1\cf1 <li>\cf0\f0 Choose an action to perform:\f1\cf1 </li>\cf0\f0 \
+\f1\cf1 <p>\cf0\f0 >\b\cf2 \ul Run work.exe\ulnone \cf0 \b0 \f1\cf1 </p>\cf0\f0 \
+\f1\cf1 <p>\cf0\f0 >\b\cf2 \ul Look around.\ulnone \cf0 \b0 \f1\cf1 </p>\cf0\f0 \
+\f1\cf1 <p>\cf0\f0 >\b\cf2 \ul Log out.\ulnone \cf0 \b0 \f1\cf1 </p>\cf0\f0 \f1\cf1 </ul>\cf0\f0 \
+\
+\fs24\b1 new hire checklist\b0\fs20 \
+\f1\cf1 <p>\cf0\f0 \\
+!!First day\
+----\
+|From: \b Kandice Dubois\b0  <kdubois@dayrep.com> |	Mon, Oct 28, 2016 at 9:04 am|\
+\
+Hi $fname,\
+\
+Welcome aboard! \
+\
+The next few days will be mostly training sessions to get you acquainted with your new position as Junior Staff Assistant. Please complete the following tasks:\f1\cf1 <ul>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0 Activate your computer account.\f1\cf1 </li>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0 Read the corporate handbook.\f1\cf1 </li>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0 Complete the Workplace Harassment Training and Confidentiality Training online modules.\f1\cf1 </li>\cf0\f0 \f1\cf1 </ul>\cf0\f0 \
+\
+Let me know if you need anything!\
+\
+Thanks,\
+\
+Kandice\
+\
+\
+\b Kandice Dubois\b0 \
+Human Resources\
+DayRep Corporation\
+W (555) 421-6000 x3884\
+C  (555) 818-4763\
+\
+@@font-family:"Comic Sans MS", cursive;\
+\i \u8220?Coming together is a beginning. Keeping together is progress. Working together is success.\u8221? \u8211? Henry Ford\i0 \
+@@\
+\
+@@font-size:x-small;\
+----\
+CONFIDENTIALITY NOTE: The information transmitted, including attachments, is intended only for the person(s) or entity to which it is addressed and may contain confidential and/or privileged material. Any review, retransmission, dissemination or other use of, or taking of any action in reliance upon this information by persons or entities other than the intended recipient is prohibited. If you received this in error, please contact the sender and destroy any copies of this information.\
+@@\
+\f1\cf1 </p>\cf0\f0 \
+\b\cf2 \ul (Go back)\ulnone \cf0 \b0 \
+\
+\fs24\b1 automated_transcript_11062016\b0\fs20 \
+What\u8217?s the matter? Created, destroyed, transformed. Look around, Johnny. Do you see it? It\u8217?s a lump of dirt and coal spinning in the\
+dark.Worms eat it from the inside out. Worm lagoons, that\u8217?s right. You killed one aft er it rained, yesterday. I could have forgiven you\
+if you hadn\u8217?t squished the life out of it on purpose. How many people do you think have sex in a day? Seven billion divided by two\
+people getting luckier than you. Remember when you used to pluck dandelions from your grandmother\u8217?s garden and stir it up in a\
+bowl with the pinecones and rotten maple leaves because you were worried that the deer wouldn\u8217?t have enough to eat that winter?\
+I don\u8217?t even recognize you anymore, Johnny. Ever since you got back, you\u8217?re diff erent.\
+\u8220?What are you talking about Beck? I\u8217?m the same me as I always was. What\u8217?s gotten into you?\u8221?\
+I fi gured you\u8217?d say that.\
+I see the way you scan the place when you walk in, even the bedroom.\
+But it\u8217?s me, Johnny. Don\u8217?t you trust me anymore?\
+Just tell me you\u8217?re gonna be alright.\
+Just tell me we\u8217?re gonna be alright.\
+\
+\f1\cf1 <table style="margin:auto">\cf0\f0 \f1\cf1 <tr>\cf0\f0 \f1\cf1 <td>\cf0\f0 \f1\cf1 <<button "Fake" "work.exe">>\cf0\f0 \f1\cf1 <<set $doclist.delete($current_doc)>>\cf0\f0 \f1\cf1 <\f1\cf1 </button>\cf0\f0 >\cf0\f0 \f1\cf1 </td>\cf0\f0 \f1\cf1 <td>\cf0\f0 \f1\cf1 <<button "Back" "work.exe">>\cf0\f0 \f1\cf1 <\f1\cf1 </button>\cf0\f0 >\cf0\f0 \f1\cf1 </td>\cf0\f0 \f1\cf1 <td>\cf0\f0 \f1\cf1 <<button "Real" "work.exe">>\cf0\f0 \f1\cf1 <<set $doclist.delete($current_doc)>>\cf0\f0 \f1\cf1 <\f1\cf1 </button>\cf0\f0 >\cf0\f0 \f1\cf1 </td>\cf0\f0 \f1\cf1 </tr>\cf0\f0 \f1\cf1 </table>\cf0\f0 \
+\
+\fs24\b1 doc3\b0\fs20 \
+I pulled up to the sidewalk outside of Arrivals. She should be here soon unless I got dates wrong. I always get dates wrong, especially the important ones. I have flowers this time, and freshly cut ones. I thought about what she said when she left. I always think about her, I mean her words. Maybe flowers weren\u8217?t the best idea, all things considered. Her boyfriend brought them too, son of a bitch. If she knew about me, she\u8217?d leave him, guaranteed.\
+\
+\f1\cf1 <table style="margin:auto">\cf0\f0 \f1\cf1 <tr>\cf0\f0 \f1\cf1 <td>\cf0\f0 \f1\cf1 <<button "Fake" "work.exe">>\cf0\f0 \f1\cf1 <\f1\cf1 </button>\cf0\f0 >\cf0\f0 \f1\cf1 </td>\cf0\f0 \f1\cf1 <td>\cf0\f0 \f1\cf1 <<button "Home" "pc">>\cf0\f0 \f1\cf1 <\f1\cf1 </button>\cf0\f0 >\cf0\f0 \f1\cf1 </td>\cf0\f0 \f1\cf1 <td>\cf0\f0 \f1\cf1 <<button "Real" "work.exe">>\cf0\f0 \f1\cf1 <\f1\cf1 </button>\cf0\f0 >\cf0\f0 \f1\cf1 </td>\cf0\f0 \f1\cf1 </tr>\cf0\f0 \f1\cf1 </table>\cf0\f0 \
+\
+\fs24\b1 Config\b0\fs20 \
+/* Determines whether the story's history controls (Backward, Jump To, & Forward buttons) are enabled within the UI bar.  */\
+Config.history.controls = true;\
+\
+/* Determines whether passage titles are appended to the story title, within the browser's/tab's titlebar, when passages are displayed. */\
+Config.passages.displayTitles = false;\
+\
+/*Determines whether the link-visited class is added to internal passage links which go to previously visited passages (i.e. the passage already exists within the story history).*/\
+Config.addVisitedLinkClass = true;\
+\
+\
+\fs24\b1 login for the first time\b0\fs20 \
+!Create DayRep Computer Account\
+\f1\cf1 <ul>\cf0\f0 \f1\cf1 <li>\cf0\f0 Welcome to DayRep, $fname $lname!\f1\cf1 </li>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0  Since this is your first time logging into your computer, please choose a username and password.\
+\
+Username: \f1\cf1 <<textbox "$username" "">>\cf0\f0 \
+Password:    \f1\cf1 <<textbox "$password" "">>\cf0\f0 \f1\cf1 </li>\cf0\f0 \
+\f1\cf1 <<set $haspcacct = true>>\cf0\f0  \f1\cf1 <p>\cf0\f0 \
+\f1\cf1 <<button "Create account" "login">>\cf0\f0 \f1\cf1 <\f1\cf1 </button>\cf0\f0 >\cf0\f0 \f1\cf1 </p>\cf0\f0 \f1\cf1 </ul>\cf0\f0 \
+\
+\fs24\b1 first time at desk\b0\fs20 \
+\f1\cf1 <\f1\cf1 <silently>\cf0\f0 >\cf0\f0 \
+\f1\cf1 <<set $doccursor = 0>>\cf0\f0 \
+\f1\cf1 <<set $delaycounter = 0>>\cf0\f0 \
+\f1\cf1 <<set $haspcacct = false>>\cf0\f0 \
+\f1\cf1 <<set $loggedin = false>>\cf0\f0 \
+\f1\cf1 <<set $hb_ruined = false>>\cf0\f0  \
+\f1\cf1 <<set $doclist = ["shining_shimmering_splendid.txt","autobiography.doc","automated_transcript_11062016","Complete version of The Star-Spangled Banner showing spelling and punctuation.pdf"]>>\cf0\f0 \
+\f1\cf1 <<cacheaudio "pc_login" "Audio/Computer_Magic-Microsift-1901299923.wav">>\cf0\f0 \
+\f1\cf1 <<cacheaudio "pc_error" "Audio/Computer Error Alert-SoundBible.com-783113881.wav">>\cf0\f0 \
+\f1\cf1 <<cacheaudio "pc_logout" "Audio/sms-alert-3-daniel_simon.wav">>\cf0\f0 \
+\f1\cf1 <\f1\cf1 </silently>\cf0\f0 >\cf0\f0 \
+\f1\cf1 <\f1\cf1 <goto desk>\cf0\f0 >\cf0\f0 \
+\
+\fs24\b1 logged out\b0\fs20 \
+\f1\cf1 <<audio "pc_logout" play>>\cf0\f0 \f1\cf1 <\f1\cf1 <goto desk>\cf0\f0 >\cf0\f0 \
+\f1\cf1 <<set $loggedin = false>>\cf0\f0 \
+\
+\fs24\b1 what is dayrep\b0\fs20 \
+This link goes in the stack of papers:\b\cf2 \ul DayRep - Your gateway to information! (brochure)\ulnone \cf0 \b0 \
+\
+\b\cf2 \ul (Go back)\ulnone \cf0 \b0 \
+\
+\fs24\b1 Complete version of The Star-Spangled Banner showing spelling and punctuation.pdf\b0\fs20 \
+\f1\cf1 <p style="font-family:Georgia,serif;font-size:small;">\cf0\f0 \f1\cf1 <table>\cf0\f0 \f1\cf1 <tr>\cf0\f0 \f1\cf1 <td style="padding:20px;">\cf0\f0 \
+O say can you see, the battle\u8217?s confusion\
+when freemen shall stand In full glory\
+in dread silence reposes, foul footstep\u8217?s pollution.\
+On the shore Where the foe\u8217?s haughty\
+\
+\u8217?Tis the star-spangled banner the gloom of the grave,\
+That the havoc of war was still there,\
+O\u8217?er the land of the hireling and O\u8217?er the slave\
+As it fitfully blows, half conceals in air\
+\
+the mists of the deep o\u8217?er the towering steep,\
+so proudly we hail\u8217?d \u8220?In God is our trust,\u8221?\
+What is that which the breeze,\
+O say when our cause it is just,\
+\
+Whose broad stripes leave us no more?\
+a Country should be ever reflected now shines\
+Blest with vict\u8217?ry and blood the terror the war\u8217?s\
+proof that our flag doth wave O\u8217?er the fight\
+\
+Then conquer we must, No refuge could save \
+the star-spangled banner From power that hath\
+dimly seen through, half discloses? the brave.\
+And the rocket\u8217?s twilight\u8217?s so gallantly last\
+\
+O thus it has wash\u8217?d out their desolation!\
+the perilous home of the ramparts, gleaming,\
+Between their lov\u8217?d home And the star-spangled nation!\
+Now it catches the gleam of the morning\
+\f1\cf1 </td>\cf0\f0 \
+\
+\f1\cf1 <td style="padding:20px;">\cf0\f0 \
+Their peace may free the heav\u8217?n of flight or does that \
+And this be our motto -\
+Praise the made and preserv\u8217?d\
+and rescued the free\
+And in triumph shall we\
+banner the bombs and the land\
+A home and in triumph\
+\
+the brave. watch\u8217?d us by the dawn\u8217?s early light,\
+wave at the bright stars- O long may it wave\
+O\u8217?er the star-spangled banner who so vauntingly swore\
+And where is that band of the brave, and \
+through the home of \
+the free?\
+\
+land and the home \
+were\
+host \
+of \
+the \
+red glare O\u8217?er bursting, and in the stream,\
+streaming? \
+\
+the night Gave through wave of the land\u8217?s\
+first beam, of the free \
+and \
+yet \
+a\
+home of the land and What brave!\f1\cf1 </td>\cf0\f0 \f1\cf1 </tr>\cf0\f0 \f1\cf1 </table>\cf0\f0 \f1\cf1 </p>\cf0\f0 \
+\f1\cf1 <table style="margin:auto">\cf0\f0 \f1\cf1 <tr>\cf0\f0 \f1\cf1 <td>\cf0\f0 \f1\cf1 <<button "Fake" "work.exe">>\cf0\f0 \f1\cf1 <<set $doclist.delete($current_doc)>>\cf0\f0 \f1\cf1 <\f1\cf1 </button>\cf0\f0 >\cf0\f0 \f1\cf1 </td>\cf0\f0 \f1\cf1 <td>\cf0\f0 \f1\cf1 <<button "Home" "pc">>\cf0\f0 \f1\cf1 <\f1\cf1 </button>\cf0\f0 >\cf0\f0 \f1\cf1 </td>\cf0\f0 \f1\cf1 <td>\cf0\f0 \f1\cf1 <<button "Real" "work.exe">>\cf0\f0 \f1\cf1 <<set $doclist.delete($current_doc)>>\cf0\f0 \f1\cf1 <\f1\cf1 </button>\cf0\f0 >\cf0\f0 \f1\cf1 </td>\cf0\f0 \f1\cf1 </tr>\cf0\f0 \f1\cf1 </table>\cf0\f0 \
+\
+\fs24\b1 Twine UI CSS\b0\fs20 \
+/***********************************************************************\
+	BLEACHED - A largely white style for SugarCube (v2.7.0+)\
+***********************************************************************/\
+body {\
+	color: #111;\
+	background-color: #fff;\
+}\
+a {\
+	color: #35c;\
+}\
+a:hover {\
+	color: #57e;\
+}\
+span.link-disabled {\
+	color: #777;\
+}\
+.passage .link-visited {\
+    color: brown;\
+}\
+button {\
+	color: #111;\
+	background-color: #acf;\
+	border-color: #8ad;\
+}\
+button:hover {\
+	background-color: #8ad;\
+	border-color: #68b;\
+}\
+button:disabled {\
+	background-color: #ccc;\
+	border-color: #aaa;\
+}\
+input, select, textarea {\
+	color: #111;\
+	border-color: #ccc;\
+}\
+input:focus, select:focus, textarea:focus,\
+input:hover, select:hover, textarea:hover {\
+	background-color: #eee;\
+	border-color: #111;\
+}\
+hr {\
+	border-color: #111;\
+}\
+\
+.error {\
+	background-color: #eaa;\
+	border-left-color: #d77;\
+}\
+\
+#ui-bar {\
+	background-color: #eee;\
+	border-color: #ccc;\
+}\
+#ui-bar hr {\
+	border-color: #ccc;\
+}\
+#ui-bar-toggle,\
+#ui-bar-history [id|="history"] {\
+	color: #111;\
+	border-color: #ccc;\
+}\
+#ui-bar-toggle:hover,\
+#ui-bar-history [id|="history"]:hover {\
+	background-color: #ccc;\
+	border-color: #111;\
+}\
+#ui-bar-history [id|="history"]:disabled {\
+	color: #ccc;\
+	background-color: transparent;\
+	border-color: #ccc;\
+}\
+#menu ul {\
+	border-color: #ccc;\
+}\
+#menu li:not(:first-child) {\
+	border-top-color: #ccc;\
+}\
+#menu li a {\
+	color: #111;\
+}\
+#menu li a:hover {\
+	background-color: #ccc;\
+	border-color: #111;\
+}\
+\
+/* Default dialog styling */\
+#ui-overlay {\
+	background-color: #777;\
+}\
+#ui-dialog-titlebar {\
+	background-color: #ccc;\
+}\
+#ui-dialog-close:hover {\
+	background-color: #b44;\
+	border-color: #a33;\
+}\
+#ui-dialog-body {\
+	background-color: #fff;\
+	border-color: #ccc;\
+}\
+#ui-dialog-body hr {\
+	background-color: #ccc;\
+}\
+\
+/* List-based dialog styling */\
+#ui-dialog-body.list li:not(:first-child) {\
+	border-top-color: #ccc;\
+}\
+#ui-dialog-body.list li a {\
+	color: #111;\
+}\
+#ui-dialog-body.list li a:hover {\
+	background-color: #ccc;\
+	border-color: #111;\
+}\
+\
+/* Saves dialog styling */\
+#ui-dialog-body.saves > *:not(:first-child),\
+#ui-dialog-body.saves tr:not(:first-child) {\
+	border-top-color: #ccc;\
+}\
+#ui-dialog-body.saves .empty {\
+	color: #777;\
+}\
+\
+/* Settings dialog styling */\
+#ui-dialog-body.settings button[id|="setting-control"] {\
+	color: #111;\
+	border-color: #ccc;\
+}\
+#ui-dialog-body.settings button[id|="setting-control"]:hover {\
+	background-color: #eee;\
+	border-color: #111;\
+}\
+#ui-dialog-body.settings button[id|="setting-control"].enabled {\
+	background-color: #9e9;\
+	border-color: #7c7;\
+}\
+#ui-dialog-body.settings button[id|="setting-control"].enabled:hover {\
+	background-color: #7c7;\
+	border-color: #5a5;\
+}\
+\
+/* Debug view styling */\
+html:not(.debug-view) #debug-view-toggle {\
+	color: #111;\
+	border-color: #ccc;\
+}\
+html:not(.debug-view) #debug-view-toggle:hover {\
+	background-color: #eee;\
+	border-color: #111;\
+}\
+html.debug-view #debug-view-toggle {\
+	background-color: #9e9;\
+	border-color: #7c7;\
+}\
+html.debug-view #debug-view-toggle:hover {\
+	background-color: #7c7;\
+	border-color: #5a5;\
+}\
+html.debug-view .debug {\
+	background-color: #dc9;\
+}\
+html.debug-view .debug.hidden,\
+html.debug-view .debug.hidden .debug {\
+	background-color: #bbb;\
+}\
+\
+\
+\
+\fs24\b1 PC UI CSS\b0\fs20 \
+/* BASED ON CSS CREATED BY PETER J LANGLEY\
+http://www.codechewing.com/library/mac-terminal-shell-css-html/ */\
+\
+body.pc .passage {\
+  width: 500px;\
+  margin: 100px auto 0 auto;\
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);\
+\
+  -webkit-border-radius: 3px;\
+  -moz-border-radius: 3px;\
+  border-radius: 3px;\
+}\
+\
+body.pc .passage h1 {\
+  text-align: center;\
+  color: #525252;\
+  padding: 5px 0;\
+  margin: 0;\
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.5);\
+  font-size: 0.85em;\
+  border: 1px solid #CCCCCC;\
+  border-bottom: none;\
+\
+  -webkit-border-top-left-radius: 3px;\
+  -webkit-border-top-right-radius: 3px;\
+  -moz-border-radius-topleft: 3px;\
+  -moz-border-radius-topright: 3px;\
+  border-top-left-radius: 3px;\
+  border-top-right-radius: 3px;\
+\
+  background: #f7f7f7; /* Old browsers */\
+  background: -moz-linear-gradient(top,  #f7f7f7 0%, #B8B8B8 100%); /* FF3.6+ */\
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f7f7), color-stop(100%,#B8B8B8)); /* Chrome,Safari4+ */\
+  background: -webkit-linear-gradient(top,  #f7f7f7 0%,#B8B8B8 100%); /* Chrome10+,Safari5.1+ */\
+  background: -o-linear-gradient(top,  #f7f7f7 0%,#B8B8B8 100%); /* Opera 11.10+ */\
+  background: -ms-linear-gradient(top,  #f7f7f7 0%,#B8B8B8 100%); /* IE10+ */\
+  background: linear-gradient(to bottom,  #f7f7f7 0%,#B8B8B8 100%); /* W3C */\
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#B8B8B8',GradientType=0 ); /* IE6-9 */\
+}\
+\
+body.pc .passage ul {\
+  margin: 0;\
+  padding: 5px;\
+  list-style: none;\
+  background: #141414;\
+  color: #45D40C;\
+  font: 0.8em 'Andale Mono', Consolas, 'Courier New';\
+  line-height: 1.6em;\
+\
+  -webkit-border-bottom-right-radius: 3px;\
+  -webkit-border-bottom-left-radius: 3px;\
+  -moz-border-radius-bottomright: 3px;\
+  -moz-border-radius-bottomleft: 3px;\
+  border-bottom-right-radius: 3px;\
+  border-bottom-left-radius: 3px;\
+}\
+\
+body.pc .passage ul p {\
+    margin: 0;\
+    padding: 0;\
+}\
+\
+body.pc .passage li:before {\
+  content: '$';\
+  position: absolute;\
+  left: 0;\
+  top: 0;\
+}\
+\
+body.pc .passage li {\
+  word-wrap: break-word;\
+  position: relative;\
+  padding: 0 0 0 15px;\
+}\
+\
+body.pc .passage a {\
+  color: #45D40C;\
+}\
+\
+\fs24\b1 login\b0\fs20 \
+!DayRep Secured Login\
+\f1\cf1 <ul>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0  Log in to your computer.\f1\cf1 </li>\cf0\f0 \
+\f1\cf1 <p>\cf0\f0 Username:  \f1\cf1 <<textbox "$u" "">>\cf0\f0 \f1\cf1 </p>\cf0\f0 \
+\f1\cf1 <p>\cf0\f0 Password:   \f1\cf1 <<textbox "$p" "">>\cf0\f0 \f1\cf1 </p>\cf0\f0 \
+\
+\f1\cf1 <p>\cf0\f0 \f1\cf1 <<button "Log in" "logged in">>\cf0\f0 \f1\cf1 <\f1\cf1 </button>\cf0\f0 >\cf0\f0 \f1\cf1 </p>\cf0\f0 \
+\f1\cf1 </ul>\cf0\f0 \
+\
+\fs24\b1 login failed\b0\fs20 \
+\f1\cf1 <<audio "pc_error" volume .8 play>>\cf0\f0 \
+!Login Failed\
+\f1\cf1 <ul>\cf0\f0 \f1\cf1 <li>\cf0\f0 Invalid username or password.\f1\cf1 </li>\cf0\f0 \
+\
+\f1\cf1 <p>\cf0\f0 >\b\cf2 \ul Try to log in again.\ulnone \cf0 \b0 \f1\cf1 </p>\cf0\f0 \
+\f1\cf1 <p>\cf0\f0 >\b\cf2 \ul Give up.\ulnone \cf0 \b0 \f1\cf1 </p>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0 DEBUG:\
+key:     \f1\cf1 <<print $username>>\cf0\f0 \
+entered: \f1\cf1 <<print $u>>\cf0\f0 \
+key:     \f1\cf1 <<print $password>>\cf0\f0 \
+entered: \f1\cf1 <<print $p>>\cf0\f0 \f1\cf1 </li>\cf0\f0 \f1\cf1 </ul>\cf0\f0 \
+\
+\fs24\b1 handbook\b0\fs20 \
+\f1\cf1 <p>\cf0\f0 \\
+!DayRep Employee Handbook\
+\
+Each daily report begins with \i you!\i0 \
+\
+\b Table of Contents\b0 \f1\cf1 <ol>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0 Introduction\f1\cf1 </li>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0 History of DayRep\f1\cf1 </li>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0 Corporate Mission Statement\f1\cf1 </li>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0 Managing your DayRep computer account\f1\cf1 <ol>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0 Creating an account\f1\cf1 </li>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0 Logging in\f1\cf1 </li>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0 Security\f1\cf1 </li>\cf0\f0 \f1\cf1 </ol>\cf0\f0 \f1\cf1 </li>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0 Using the Document Viewer&trade;\f1\cf1 <ol>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0 Receiving documents\f1\cf1 </li>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0 Determining document origin\f1\cf1 </li>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0 Document legitimacy\f1\cf1 </li>\cf0\f0 \f1\cf1 </ol>\cf0\f0 \f1\cf1 </li>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0 Daily reports\f1\cf1 <ol>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0 Required information\f1\cf1 </li>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0 Formatting\f1\cf1 </li>\cf0\f0 \f1\cf1 </ol>\cf0\f0 \f1\cf1 </li>\cf0\f0 \f1\cf1 </ol>\cf0\f0 \
+\f1\cf1 </p>\cf0\f0 \
+\b\cf2 \ul (Next page)\ulnone \cf0 \b0 \
+\
+\fs24\b1 Client CSS\b0\fs20 \
+/* BASED ON CSS CREATED BY PETER J LANGLEY\
+http://www.codechewing.com/library/mac-terminal-shell-css-html/ */\
+\
+body.client .passage {\
+  width: 800px;\
+  margin: 100px auto 0 auto;\
+  box-shadow: 0 0 30px rgba(0,0,0,0.4);\
+\
+  -webkit-border-bottom-right-radius: 3px;\
+  -webkit-border-bottom-left-radius: 3px;\
+  -moz-border-radius-bottomright: 3px;\
+  -moz-border-radius-bottomleft: 3px;\
+  border-bottom-right-radius: 3px;\
+  border-bottom-left-radius: 3px;\
+}\
+\
+body.client .passage h1 {\
+  text-align: center;\
+  color: #525252;\
+  padding: 5px 0;\
+  margin: 0;\
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.5);\
+  font-size: 0.85em;\
+  border: 1px solid #CCCCCC;\
+  border-bottom: none;\
+\
+  -webkit-border-top-left-radius: 3px;\
+  -webkit-border-top-right-radius: 3px;\
+  -moz-border-radius-topleft: 3px;\
+  -moz-border-radius-topright: 3px;\
+  border-top-left-radius: 3px;\
+  border-top-right-radius: 3px;\
+\
+  background: #f7f7f7; /* Old browsers */\
+  background: -moz-linear-gradient(top,  #f7f7f7 0%, #B8B8B8 100%); /* FF3.6+ */\
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f7f7), color-stop(100%,#B8B8B8)); /* Chrome,Safari4+ */\
+  background: -webkit-linear-gradient(top,  #f7f7f7 0%,#B8B8B8 100%); /* Chrome10+,Safari5.1+ */\
+  background: -o-linear-gradient(top,  #f7f7f7 0%,#B8B8B8 100%); /* Opera 11.10+ */\
+  background: -ms-linear-gradient(top,  #f7f7f7 0%,#B8B8B8 100%); /* IE10+ */\
+  background: linear-gradient(to bottom,  #f7f7f7 0%,#B8B8B8 100%); /* W3C */\
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#B8B8B8',GradientType=0 ); /* IE6-9 */\
+}\
+body.client .passage p{\
+  -webkit-border-radius: 3px;\
+  -moz-border-radius: 3px;\
+  border-radius: 3px;\
+  margin: auto;\
+  padding: 50px;\
+  list-style: none;\
+  font: 1.0em Helvetica, Arial;\
+  line-height: 1.6em;\
+}\
+\
+\fs24\b1 Print CSS\b0\fs20 \
+/* Your story will use the CSS in this passage to style the page.\
+Give this passage more tags, and it will only affect passages with those tags.\
+Example selectors: */\
+\
+body.print {\
+	/* This affects the entire page */\
+}\
+body.print .passage p{\
+	/* This only affects passages */\
+	border-style:solid;\
+	border-width:1px;\
+	border-color:black;\
+	padding:75px 100px;\
+}\
+body.print .passage a {\
+	/* This affects passage links */\
+	\
+	\
+}\
+body.print .passage a:hover {\
+	/* This affects links while the cursor is over them */\
+	\
+	\
+}\
+\
+\fs24\b1 logged in\b0\fs20 \
+\f1\cf1 <<if $u eq $username and $p eq $password>>\cf0\f0 \
+You logged in to the computer. It plays a friendly chime.\
+\
+"Welcome back, $fname $lname!"\
+\f1\cf1 <<audio "pc_login" volume .8 play>>\cf0\f0 \
+\f1\cf1 <<set $loggedin = true>>\cf0\f0 \
+\f1\cf1 <\f1\cf1 <timed 2s>\cf0\f0 >\cf0\f0 \f1\cf1 <<goto "pc">>\cf0\f0 \f1\cf1 <\f1\cf1 </timed>\cf0\f0 >\cf0\f0 \
+\f1\cf1 <\f1\cf1 <else>\cf0\f0 >\cf0\f0 \f1\cf1 <\f1\cf1 <goto login failed>\cf0\f0 >\cf0\f0 \
+\f1\cf1 <\f1\cf1 </if>\cf0\f0 >\cf0\f0 \
+\
+\fs24\b1 handbook ruined\b0\fs20 \
+As you turn the page, the binding comes loose and the whole booklet escapes your grasp. Chapter 9 shuffles itself into Chapters 4 and 6. The Table of Contents settles your desk like fresh papery snow. One sympathetic page remains between your thumb and forefinger. \
+\
+\f1\cf1 <<linkappend "Read it." t8n>>\cf0\f0  \
+\
+"This page intentionally left blank."\
+\f1\cf1 <\f1\cf1 </linkappend>\cf0\f0 >\cf0\f0 \
+\b\cf2 \ul Try to fix the handbook.\ulnone \cf0 \b0 \
+\
+\fs24\b1 ruined handbook\b0\fs20 \
+A stack of wavy, water-damaged pages. The text's ink is smeared and unreadable.\
+\
+\b\cf2 \ul (Go back)\ulnone \cf0 \b0 \
+\
+\fs24\b1 submit\b0\fs20 \
+This is the end of the demo. \
+\
+In the finished story, you will have many more documents to read and at the end you will have a special encounter based on your responses to each document. \
+\
+You had one job - how well did you do?\
+\
+Note: There are a few easter eggs and different responses to various questions. I recommend playing again!\
+\
+\b Questions for the reader/player:\b0 \f1\cf1 <ul>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0  Did you have a clear idea of what to do/how to progress the story?\f1\cf1 </li>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0  Were you frustrated by anything?\f1\cf1 </li>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0  How long did it take you to reach this page?\f1\cf1 </li>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0  How did the formatting affect your experience?\f1\cf1 </li>\cf0\f0 \
+\f1\cf1 <li>\cf0\f0  Would music add more to the story or would you find it distracting?\f1\cf1 </li>\cf0\f0 \f1\cf1 </ul>\cf0\f0 \
+\
+Thanks!\
+\
+-Phil\
+\
+\fs24\b1 The-Stanley-Parable\b0\fs20 \
+data:image/jpg;base64,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\i \i0 2wBDAAIBAQIBAQICAgICAgICAwUDAwMDAwYEBAMFBwYHBwcGBwcICQsJCAgKCAcHCg0KCgsMDAwMBwkODw0MDgsMDAz/2wBDAQICAgMDAwYDAwYMCAcIDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz/wAARCAFoAoADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD8K9u0Z9aM1IR7UmK7jnGEEUZxUhyDTSMnP86LANOcVc8NDOvWv+\i AEqvjirnhpc+ILP/AK6CrjuKWx38Vv8ALU8cHP8A9arEdtkKeamS33dq74xOQrx2+T/Wplhx2zVhLbj/AOtUy234VSiBVhhz2/OplgyatJa8VIlrgf8A1qpRJ5iosHP/ANanrbk\i0 Wq4ltUqWvHtVcocxSEHNSeT/wDqx1q0lrxThbYpqJNymID2/KlMH+z+tXUt8dqeIMduvtS5R3KH2fI6UohwOlXfs2T26UeRx04+lPlFcpiDjpigW+B7VdFvxR9n9qfKFyn5ORTRDg/yq/8AZsdsUG2xS5QKPknP+FJ9n56Ve+z/AC0n2WlygUvIzSG3yavG35pPs2PSjlHcpG346Ugh56frV37Pn0o+zUcoXKJh/n601oMj/wCtWh9n5PemtbZbpU8oXZntAR6077OeuT+VXPI9v0oNtU8o7lFrXNH2ar32b6/lSNb/AOcUcrC5nm346UeR/s/rV/7N7fpQbX2/SlysdzP8ik8nntV825x0o+z+1HKMoGHHp+VIYcmtD7P7fnTTb8UrCuUPs9J5BrQFvik+zdP8aLDM5rfNN8jn+laLW1M+y/7NHLqBRa3Ipphx6flWgbXnp+nWm/ZcH+uKnlAz2hyO1N+z/LWibb60n2WjlAzjB/s0nk5P9a0GtFH1pptcUcoFAw/5xTWhyf8APNXzacf/AFqYbbJ9vpRygUTCT/8AqpDC1Xmtef8A61Na2/8A1VXL1ApmKm+Vz0q75H+c0w2+KOVgUzFg9qDFk/w1b+z00xlfb8KXKBUMXOOfypCmP8KtmLI7flTXh+X9OtMCnszSNF8vp3q4IgR3pGh2t/8AXqQKZjzTXiyDVvyc9qQwcf8A1qLFcxltHi8j46GtRIecVUMOb6LitVYMn/61CiEmRpDmpBFketSJD7fnU6QZ/wD1VViSAQVIkHH41YSHFOS3+Smok8xHDHtP/wBerCQ+mfyp0dtU0cPar5QuQ+XxQIsHuPrVwW2aTysPRyhzFcR4NP8AL4/CpPLw/pTigIo1Fch24NOC4P0oZcNilAoGeBn6fSkxg1JjNGzjp715Z3Ee3ilKYNS7crSYxQTcjVN3+NXfDSf8VDZ8f8tQKrhd1XPDq48Q2X/XZe3vVRWoX0PVYbbhanjtcDpVqGz+Ve2PWrCW2K9RROG5VS2ycf0qVLT2q3Ha5/8A1VMlpxV8oFNLXp/hUiWwzj8quR2pH1qZLTBp8pPMUVtaeltk1fS15qRbXj+H8KtRFzGebXA6U4W5FaH2WlS1pcojP+ysBSi2xWh5J/T0pTa8Uco+YoG14pPs2T61pG0yvTtjikFpggEf/Xp8ouYzxb5FH2bitI226hrMbqOUOYzfs+Bj86DB/nNaQtMHFBtcGlyhzGWYOen60vkY/pWj9mwOlH2THajlDmM8wbqQW2DWitpkfd60C1Gen41PKPmM37ONvenG15rQNuDR9l56Uco+YzTa8f401rTFaTWufw60CD1FHKHMZf2QjtSG04+7WpJbbl9fwpPspz/nmpcQ5jN+ycdKQWmQOtaYtaPsmP8AJqeUdzLNvmmm29q1jZrmg2I9KOULmT9mxSfZs+v5Vq/YsDv+VDWf+cUcozJ+zcf/AFqGtdx6VqNZYo+xbanlAyfspz3oFvz3rWFqw/8A1UfZDx/hTsBlPa89xTPs3PetaSy/+txTPsWD0H5UuUDKNtn8KRrbA4Fav2Km/Y8mjlC5l/Zfp+NNe0x2rXFnio2s/brT5QuZJtSexpDa81qfZee9IbKlYLmS1pTDbE\i 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\i0 AFVol1AcnLEdv51MiKMe/NRqCF7ZqRBj8qoCQruPSjZgcdfrQpx/nrT/AOGgQ0xgGpY4+M/zpo+76etPU8e1MQAAdaRkyTn+dL95qVgQaTd0AIABQyKP/wBdCnbQRuNCDoIBn8fek8vBFLjBp/ShhERYx/ntRtGKXdgf1oByaPQYFBmk2jNK3/66AMnI7UrDBlHajaKSU7APpSh/lB/QUMA8sD8aaEx/WpFXcKAKgBnl5FKIx/8AXpzcGgLipANvH4U3Zk1Ih4owDRcBoQZo2YHenDFOI5qblXI5I+K4jwun/GRerD+H+w4z+Pmmu6cfu/8APFcN4Xbb+0TrI52/2HFx/wBtWoj8cfUpfCzvvLBbFW7TSmuASqt8vBxzUEC7p/8APNekeAMLouOnz5wO9epRp87sc85OKOGHh+Qj7kn5GlXw/J/cf8jXqksrRkbcbe49Ko3OphZcruPOMCuuOCvsYe2secHRmRvm3e4Ipw0hv7rfka9HiJu4x5m7n2potMP8ufxqvqMVpcPbHna6Q27G18+m002TTPKYqdwYdQQeK9OigCn5lycVm38RkD7T3P1NKODi3a4nWaPPXiiQ/wCsX86NsJ/5ar7da7KTw3JJDIdiqV5wTyayb+0+yOM8buhrSOAh0Ye2fYwzbpt+9x9DTPKjJ4b8geP0rZktpHkXDblPoaY8Mlu33T6U/wCz4dw+seRkmzDDrx7A/wCFMnsTEmWVh/wE10Wk3DC5Af7uc1Y8RwbLGTqdxH86ieBgle5SrXexxrrt4rhPi2wXXvDKE43Ty4Hr8q1392u168/+LsYfxZ4T/vefOR/3xXj4j4GdlP4i1awjZUxgXHSnWqYT+VTMuP61wx2KZUKAPUFzHnp7VcePB+tRFPmOaoCoYcio5Ihnp+lWSu0nA5qGRDj9KQFZolB9aY0Sjt7VYC5H+HemTLzTAqtGpNIoy1TEbTn8OtMcACpAjaNSelRSoAnFSv8Ad/CmuuRQVqUrRF/tleP4a240UGsaxH/E4H+72rbjFEQkTRAelWFRc/jUMY5qZW/+tVkEgUVJsBH/ANemx8sKkX7oqiBBGMip7eJS9RJ976Vas0/U0wJhHxUFwvGfzq0elVphhTR0ApXCZ/GqFwOtaE/X8aoTnispGiKE4wPxxVSbrmrk/wAp/CqcwxWUjRHhhHIpSKb3p2a807ByjKUYwfahVyn48UNQAH7tOh/10eOzD+dNzgU5DtdfYirsI+jNPBNnHjuBVuLj34qppXOmwnH8Cn9KuIMfWvZieaSpyKlVcflUaAYp5cKa0ESod4pwXimKeP0qUHC\i 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\i0 AKqdxFOQVBIvJ/zirUi8c1Xk5FAytKcf/q61BL2x9KtOuAarSJ/nGaAsQOO1VbsfLVt+Wqtefd96AsZ+kf8AH9NWvH/DWTpA/wBMm+ta0f8ASqjsKW5KoyKsRDC1CnG2rES5H41RJNCuFqRBk9+OtMjGFFTxpk/TmqRmS2y45qzHzUMLKT8ucevrUyrjj3rRAK4/lVeYZqw3BqCYZBHtUjKNyPnz9ao3C8d6vXZ4qldnH/6qxkaozrrrVOUYBq5PwKpuMisZFo5OEFm/nVyBMf3sehrFtoS8YZprrcxPSZgOp960rTS5JrZZhLN5ZJALXhXJHsWraI2bNmuEx8x9Oa0rM/P94j8a52HSGcrmaT6/bT/8VWnZ+E7ifH+kTHd0Av8A+m6uiLl2M5WN+BtrD5j09asRLk/ePpXNRaYJV4uNQ+XjP2mT/GrVrpWB/wAfV+TjOftUnH61spPsZ8p0UcXzcsf8akbcW++awV0wMcm61Dj/AKeZP8at2/hOa5hWRbq58uTO0vflN2Dg9WFXGT6IHZbk+pWLXERXe3zfpXKXnhDUrzxQ2q3OrapeXwCrE80pkEQX7oXPYV0\i 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\i0 AK6eTjNbpkEbDJ6U3y8/nUhXP1x2pp/rVFEbjOdtRlWz7VM3B4qOQc\i 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\i0 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\i fSq3/s1fMWmShZmrya3xM647Gpnnt9aVCpNQb1/yakD7RXOWSSuu3r0prycdvpUXm7vf8aTd82cdKYEhI3cUxmXnB5pGk3U3tVoAbkde9AX3pyNtXpQzZXpVxjcnmIXVcY7VC0fFWHOajk2j8avlJKzRbh/Komh5x/OrUgBqF1U0+UVyq8OT6Go2g5q1IFqN+Bimoi5iq0OT/jTWh/2eatMoz2/Go2XH9BVKIcxWMFIYfY1Y2gn/wCvQUGaOUOYr+Xjsfxq/wCGvE+peDNSS70q8nsZ1OQ0ZIB+o6Gq2zj/ABoKZPalKmpKzKUrO6P0B/4J7/8ABSnUhqMPh/xJeL5xIVGkPySD1B7fSv06+Gvxgjv9Pj3yeZZ3AyvzbthPpX85GmajNo2oQ3VtI0c8DB0ZT0Ir9HP+Cef7dLeINNg0bVrwC7hATEjferxqmFqYSqsThtO6/Q7PbKvT9lV1P048RJHcx7o/mVhkEd64nW9KVix2/jVXwT8So72BY2mEkbjI5ztrX1K4WYblI55zX12DxdPFU/aR+a7Hz9ejKjPlZxGraErE/KK53UtCzn5a7vUEV/SsW8t1z6VvKIozOCvdDC5+X9K4P4lfCGHxdH5n3biLOwsNyn2Ir2C/swc9Kxb+07e9c1fDwqQcKiumau0laR8r678NLPT7pre+0y3hmzgN5YCyfQ1j3Xwx0sdLOEf8AFfSXizwn/wkFu8M0duy/wAJIO5a8p8VeBdQ8LMdy/arfPDIPmWvz3NuG6tC9XC3lHt1X+Z5WIws4e9Teh5lP8N9NGQtrDn/AHKP+FSQzLuSxjK/7orq7m8t9LiM1w2zA/iGMV5X8VP2poNBElrpsizTjjIPC18pzVb8q3O7J8lxuZVPZ4dadW9kdFP8H1/58Y/yFU5/hIB/y5xj8BXgd/8AtIeJLiZm/taZdx6LjArPuP2iPEpP/IYn/wDHf8K1Uax9x/xDfEpa4iP3M+gLj4T8f8ekf1rNvvg6Zh/x6xflXgs37QfiNv8AmMzevUf4VXn/AGgPETf8xiX81/wraMK3kT/xD6uv+YiP3M9U8Tfs2NquWSGKN+zKcVykn7N3iKwn/cy2rID8pLkMK4y4+PXiBh/yGJvzX/Cqc3x415uurTfmv+FdlKpiY6Jof+otdae3j9zPU/8AhWev3Fmtrq0NnqFuvCln/eJ9DXIeL/glqGixtcWX+kRdTHn5lrjrv43a7IedUn/Mf4VmXXxo1vnGpTH8v8K9TBY7FUpq/wAPYz/1Rq0nrWVvRlia6kt5CkiPGynBVhginLfbu9ct/wALEur6/Z7lxNu6kgDNaUOpQ3y7o2Ct3Br6ahmsJO01YwxGRVIR5qUub8zWkusioGn59qotcsnDVH9sy1el7RNXPElTadmc/o0ufD0P/XY/zrRgbDdqytE50Bf9mf8AwrShfLVnT2RUt2XFfNSLNtHFVkbPH9aeDxWyMzQ0fTLzxFPcQ2cEtxJDEZAiMilj0Ay5Aoj+H3jBlBbRJFYj/n4h/wDi6xry0W5X5lVgOxGaoS6DHnIjjx6AUcy63+\i0 AIAWf9f8OdcngLxbGGY6TtUDJLXUCgAe++sk+JY7OSO3aUTXzSbWSD95FGO+XAxn6EisWPQo2bmNP++a1tOsFgA9BxU838v4u/8AkO3c3orppB1+tWIbjK9fyrNjlCBf84qYT7f4q15iLGl9pylV4J/+Jnb85+9+PFQm72p96oo7jOowMfUjr04NPmA5vUZMX03/AF0b+dVLg5ib6VPfn/Tpv+ujfzqIJu3CvPb1OlbGfmnEjP8AOkYbCwPY0mOKVxjs8063Ay2KjIqS3Xlh/e5qJPQCwuBis3SYxJe3AZd2D3+taafKw9qztIGNQuPrj9a4sVK1JtGlP4jpdIgjBX92v5V6D8Cma2+LWkyW6BpY7glFHGf3Lf8A168/0puF+veu8+B14tn8W9Kkdtqi6UZ+qEf1rkyapN4pqTez/NFYiK5dO59PeKNQ26dZsx2sZoDjPfeprurfVpN/3m6/3jXmPjm4LwW7DDbZ0bOf9oY/nXbQ3mX/AB9a+s5zhOotNckV8bm3KAcbj3\i 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\i0 AF69X0D4n/bLdY5W+bHU1cl15Zmz29RWMcjwa+GP4ir5tiq8uarK7PCJv2U9ck5W8z/2yrJ1H9l/XLbObjP/AACvpFdZ2Jwxqjfaut0CG+9Vf2PhV0/E51jKh8x3v7OWsqP+Pj/yGaxb79n7WEJ3Tf8AkOvpjUnVSxXvWBqt2hVvu0f2Th1svxK+tVD5v1D4EapGPmm/8drKn+B2oSZ/0g/98179rVzG+4ZX865XVJvLLMrfjUvLqC2Q/rEzxbUPgpfwn5pzx321lT/B+8dv9e35dK9ivdRWThmX61j6iyjcQy1P1Kiug/bSPnPQ5Wj0u52tt+Ycj3q3JH8/+um/Mf4UUVrT+FEy3EWBn/5bS/p/hT/sjY/10n50UVZI/wCxn/ntJ+dOW0/6ay+md1FFAmOFlx/rpvzoFln/AJbS/wDfVFFMbD7G2f8AWzf99UnkuD/rpsf71FFIByox486c/wDAqntpWinjYSyYLbSC2c8GiigCndfPey/75NWLRMtRRXLLc2WxYvYg2mzeykiueXkUUVIIU0tud0x+lFFEthospyKzrHnVrjmiiuXEfwmXT3N2y4211nw0vBZ+NrGY7mEdzExA5J57UUVw5XpXb8n+heI+H5nuPiXUPt3h0yBWQMM4bqOa62K5+c/WiivpEzjZbgueetTNc7VzuHTmiimI47xH4rnfxBBZW7IrzH5N+Qr46jcBhTg5GeDg8iti10XU2HPkf9/14/WiivJxmMqUqlono4XDQqQvIuxeHNYmG2MW289M3CD+tWfCV9qFjr9xZ3jwy+SqkyQtlAxzlQe+BjnjrRRSwWNqVqvLLaxeLwsKdPmjuehaffbUHNaVtf8A596KK9lHkyNLRtQzdr83+c1zfwl1Ar4a0/kfcXiiimB4x+2jL5viq3f1knB/8cNfPEn3/wDgVFFfI58/fivX9D1MH8JMHPp+tCtntRRXzp2XHGXn7uaQyZHT8KKKBXFZ9uKaXUdqKKBkiycdaGkx0P6UUVSjpcka0tNMuO9FFVYkb5mRTS+P50UVVtBEbSc+tIzeuKKKqyQhGfmo2fA9/SiigCNpPl/hppf0WiitAGeYKTcRRRQA1vf+VN35Peiir5UAB8ikkbpn0oopk31sJHP5EgZeGU5Fe0fBL4s+QI4ZX+YYHJoorow715egRdnc+gvCnxAaNVaNvlbHfpXoGleNVvYlUtRRXvZTWmpcnQ58dTi1zdSa41gMv3qz59W560UV9HI8eJTudV/2v1qhcav70UVkyihcapk9ao3OpZzzRRQaGPd3r2k3mwnnqQO9ami/EONFVZm4+vSiinCTT0JkbC+OLFlH74VVvfFlqx+WaiiirVcdghFMwdc8eQ28TYk9q858VfFFlkYRsG/GiivCzDGVVZJndRoxOQ1D4kXUv/66xr3x5dNn5v1oorzliKr3kzp9nHsZF34xuH781Qn8XXDfxCiitFWm+pPKj//Z\
+\
+\fs24\b1 handbook ruined 2\b0\fs20 \
+Seeing as you have no other means to understand the duties your new job entails, you gather remnants of the handbook and wander the office area, looking for a way to fasten them together.\
+\
+You come across an automatic stapler next to the kitchenette sink in the break room.\
+\
+\f1\cf1 <<linkappend "Keep looking.">>\cf0\f0 \
+\
+After a few more minutes of searching, you don't find any other ways to fasten the handbook. Not even a paperclip. You are mildly concerned, but have more important things to think about. Namely, how to fix your employee handbook.\
+\f1\cf1 <\f1\cf1 </linkappend>\cf0\f0 >\cf0\f0 \
+\b\cf2 \ul Use the stapler.\ulnone \cf0 \b0 \
+\
+\fs24\b1 handbook ruined 3\b0\fs20 \
+The stapler is tucked in a nook between the sink and the refrigerator, you have to lean over the trash bin to reach it. \
+\
+\f1\cf1 <<linkappend "Move the stapler." t8n>>\cf0\f0 \
+\
+It is fixed to the counter somehow.\
+\f1\cf1 <\f1\cf1 </linkappend>\cf0\f0 >\cf0\f0 \
+\f1\cf1 <<linkappend "Use the stapler to bind the pages." t8n>>\cf0\f0 \
+\
+You neaten the stack of handbook papers on the coutertop. They're still out of order, but you figure you can deal with that later with some clever bookmarks. \
+\
+You lean over the sink and jam what's left of your handbook into the stapler's plastic jaws, but nothing happens. The belly of your shirt feels damp where it rests against the countertop. After a few tense moments you jimmy the papers around in the stapler in desperation. \
+\
+You hear a door shut elsewhere in the office. Your primal instincts switch from anger to fear of embarrassment; you look quickly over your shoulder for possible witnesses. \
+\
+\f1\cf1 <<linkappend "Try again." t8n>>\cf0\f0 \
+\
+You refocus your attention to this stupid handbook. You jam them into the stapler again, but it refuses to bind the pages.\
+\
+In a cruel twist of fate, you feel the acceleration of your body falling into the sink. Saved by your reflex of self preservation, you catch yourself on the countertop. Before you can breathe a sigh of relief, you helplessly watch the shuffled pages of your handbook line the sink basin.\
+\
+You spend the next five minutes holding them under the hand drier in the bathroom.\
+\f1\cf1 <<set $hb_ruined = true>>\cf0\f0 \
+\b\cf2 \ul Return to your desk.\ulnone \cf0 \b0 \f1\cf1 <\f1\cf1 </linkappend>\cf0\f0 >\cf0\f0 \f1\cf1 <\f1\cf1 </linkappend>\cf0\f0 >\cf0\f0 \
+\
+}
