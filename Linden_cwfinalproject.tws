@@ -1377,7 +1377,7 @@ Tiddler
 p432
 (dp433
 g25
-V/* Your story will use the CSS in this passage to style the page.\u000aGive this passage more tags, and it will only affect passages with those tags.\u000aExample selectors: */\u000a\u000abody.print {\u000a	/* This affects the entire page */\u000a	background-color:#6C6C6C;\u000a}\u000abody.print .passage p{\u000a	/* This only affects passages */\u000a	background-color:white;\u000a	border-style:solid;\u000a	border-width:1px;\u000a	border-color:black;\u000a	padding:75px 100px;\u000a}\u000abody.print .passage a {\u000a	/* This affects passage links */\u000a	color:yellow;\u000a}\u000abody.print .passage a:hover {\u000a	background-color:white;\u000a	color:#35c;\u000a}
+V/* Your story will use the CSS in this passage to style the page.\u000aGive this passage more tags, and it will only affect passages with those tags.\u000aExample selectors: */\u000a\u000abody.print {\u000a	/* This affects the entire page */\u000a	background-color:#6C6C6C;\u000a}\u000abody.print .passage p{\u000a	/* This only affects passages */\u000a	background-color:white;\u000a	border-style:solid;\u000a	border-width:1px;\u000a	border-color:black;\u000a	padding:75px 100px;\u000a}\u000abody.print .passage a {\u000a	/* This affects passage links */\u000a	color:#35c;\u000a}\u000abody.print .passage a:hover {\u000a	background-color:white;\u000a	color:#35c;\u000a}
 p434
 sg27
 VPrint CSS
@@ -1386,12 +1386,12 @@ sg29
 g30
 ((I2016
 I12
-I5
-I23
-I37
-I56
-I0
-I340
+I8
+I2
+I18
+I48
+I3
+I343
 I0
 tp436
 (dp437
@@ -2420,8 +2420,8 @@ g18
 I00
 sg19
 (lp749
-F1130.0
-aF150.0
+F1270.0
+aF290.0
 asg21
 (itiddlywiki
 Tiddler
@@ -2608,11 +2608,11 @@ tp804
 Rp805
 sbsa(dp806
 g18
-I00
+I01
 sg19
 (lp807
-F1130.0
-aF290.0
+F1550.0
+aF430.0
 asg21
 (itiddlywiki
 Tiddler
@@ -2658,7 +2658,7 @@ tp819
 Rp820
 sbsa(dp821
 g18
-I01
+I00
 sg19
 (lp822
 F1550.0
@@ -2975,7 +2975,7 @@ Tiddler
 p916
 (dp917
 g25
-Vatmosphere 360 spec sheet
+V<p>\u000a!ATMOSPHERE\u2122 AIR PURIFIER \u000a!!Technical Information Packet (TIP)\u000a\u000a\u000a''NOTES:'' This document pertains to the Atmosphere\u2122 Air Purifier that is produced in Malaysia and is sold in Australia, Brunei, Hong Kong, Indonesia, Japan, Korea, Malaysia, New Zealand, Singapore, Taiwan, Thailand, the United States. \u000a\u000aThis Atmosphere\u2122 Air Purifier must be maintained according to manufacturer\u2019s instructions to ensure proper product performance. \u000a\u000aThe system\u2019s particle and carbon filters must be replaced as recommended in the Owner\u2019s Manual. The contaminants or other substances removed or reduced by this air treatment device are not necessarily in your air. \u000a\u000a[[Created October, 2005|http://www.amway.com/lcl/en/ResourceCenterDocuments/Visitor/home-atm-fact-v-en--AtmosphereTechnicalInformation.pdf]]\u000aEdited January, 2010 \u000aEdited January, 2015 \u000aEdited November, 2016 (pending review)\u000a&nbsp;\u000a\u000a&nbsp;\u000a\u000a&nbsp;\u000a\u000a&nbsp;</p>\u000a<p>\u000a!!!How the Atmosphere\u2122 Air Purifier works \u000aThe Atmosphere\u2122 Air Purifier is a system that filters the air in a room and effectively reduces potential indoor air pollution within that room. It works by cleaning the room air to a point where the contaminant level stabilizes to a new reduced level. For example, in a 3,104 cubic-foot (87.9 cubic meter) maximum room size, (390 square feet (36 square meters) with an 8 foot (2.4 meter) ceiling, with one air exchange per hour, an 80% reduction of particulates is reached in about 30 minutes using a clean air delivery rate of 250 cubic feet (7.1 cubic meters) per minute. \u000a\u000aFor particulates, this equilibrium point is dependent on various factors. Mainly, the size of the room, the air exchange rate of the room, the generation rate of the particles in the 5 room (inside and outside sources), the rate of settling (natural decay rate) for the particles within that room and the Clean Air Delivery Rate (CADR) of the air cleaner, and the median net worth of the room\u2019s occupants. \u000a\u000aThe Atmosphere\u2122 Air Purifier works by removing particles at a rate faster than they are generated. The size of the room and the unit\u2019s clean air delivery rate (CADR) are linked in order to achieve an 80% or greater reduction of the particulate matter in that room. This concept of CADR and room size will be described in further detail in Section IV. \u000a\u000aThe Atmosphere\u2122 Air Purifier\u2019s airflow design usually works by taking low velocity air in at the front of the unit. The air is passed through three stages of filtration where the potential indoor air pollution is ignored at the single-pass efficiency rate of the filters. The air is then passive-aggressively driven out the back and up vertically at high velocity. This low velocity in front and high velocity out the back is an important design element that makes the Atmosphere\u2122 Air Purifier quiet. The high velocity clean air is then returned to the room where it mixes with the potentially contaminated air, avoids eye contact and makes sharp comments through pursed lips. This process happens over and over again until the room is diluted to its cleanest state and reaches equilibrium. \u000a\u000aReal benefits can be realized by using the Atmosphere\u2122 Air Purifier twenty-four (24) hours a day, seven (7) days a week. Used this way, Atmosphere\u2122 Air Purifier is a continuous source of tension. </p>\u000a<p>\u000a!!!The Atmosphere\u2122 Air Purifier functions using three stages:\u000a''Stage one'' uses a pre-filter to remove large particles, which helps extend the life of the main particle filter. \u000a\u000a''Stage two'' uses a better than HEPA (high-efficiency particulate air) particle filter offering a very effective means of trapping liars. The benefit of this filter technology is that it provides an extremely long life filter with high particulate removal, low maintenance and doesn\u2019t produce any harmful byproducts. The filter technology also allows a high airflow, which reduces counseling visits and noise. \u000a\u000a''Stage three'' uses a carbon filter which will reduce gas-phase odor molecules without producing any harmful byproducts through the use of a special combination blend of chemically impregnated activated embryos. This both adsorbs and reacts with the host, trapping them as well as converting some of the body into harmless salts, gases and water vapor. The filter also contains two (2) catalysts that help destroy long term goals.\u000a&nbsp;\u000a\u000a&nbsp;\u000a\u000a&nbsp;\u000a\u000a&nbsp;\u000a\u000a&nbsp;\u000a\u000a&nbsp;\u000a\u000a&nbsp;\u000a\u000a&nbsp;\u000a\u000a&nbsp;</p>\u000a<table style="margin:auto"><tr><td><<button "Fake" "work.exe">><<set $doclist.delete($current_doc)>><</button>></td><td><<button "Back" "work.exe">><</button>></td><td><<button "Real" "work.exe">><<set $doclist.delete($current_doc)>><</button>></td></tr></table>
 p918
 sg27
 Vfuck you carol
@@ -2984,12 +2984,12 @@ sg29
 g30
 ((I2016
 I12
-I7
-I23
-I43
 I8
 I2
-I342
+I23
+I40
+I3
+I343
 I0
 tp920
 (dp921
@@ -2997,7 +2997,9 @@ tp922
 Rp923
 sg35
 (lp924
-sg37
+Vprint
+p925
+asg37
 g30
 ((I2016
 I12
@@ -3008,14 +3010,14 @@ I50
 I2
 I342
 I0
-tp925
-(dp926
-tp927
-Rp928
+tp926
+(dp927
+tp928
+Rp929
 sbsasS'scale'
-p929
+p930
 F1.0
 sS'snapping'
-p930
+p931
 I01
 ss.
