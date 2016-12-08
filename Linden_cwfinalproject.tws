@@ -5,7 +5,7 @@ VD:\u005c_Documents\u005cGoogle Drive\u005cHW and Labs\u005cAdvCreativeWriting\u
 p2
 sS'saveDestination'
 p3
-VD:\u005c_Documents\u005cGoogle Drive\u005cHW and Labs\u005cAdvCreativeWriting\u005cInteractiveFiction\u005cLinden_cwfinalproject.tws
+S'D:\\_Documents\\git\\CWFinalProject\\Linden_cwfinalproject.tws'
 p4
 sS'metadata'
 p5
@@ -93,8 +93,8 @@ g18
 I00
 sg19
 (lp43
-I10
-aI150
+F10.0
+aF290.0
 asg21
 (itiddlywiki
 Tiddler
@@ -143,8 +143,8 @@ g18
 I00
 sg19
 (lp58
-I10
-aI290
+F10.0
+aF430.0
 asg21
 (itiddlywiki
 Tiddler
@@ -605,7 +605,7 @@ Tiddler
 p196
 (dp197
 g25
-V<<silently>>\u000a<<set $doccursor = 0>>\u000a<<set $delaycounter = 0>>\u000a<<set $haspcacct = false>>\u000a<<set $loggedin = false>>\u000a<<set $hb_ruined = false>> \u000a<<set $doclist = ["shining_shimmering_splendid.txt","autobiography.doc","automated_transcript_11062016","Complete version of The Star-Spangled Banner showing spelling and punctuation.pdf"]>>\u000a<</silently>>\u000a<<goto desk>>
+V<<silently>>\u000a<<set $doccursor = 0>>\u000a<<set $delaycounter = 0>>\u000a<<set $haspcacct = false>>\u000a<<set $loggedin = false>>\u000a<<set $hb_ruined = false>> \u000a<</silently>>\u000a<<goto desk>>
 p198
 sg27
 Vfirst time at desk
@@ -614,12 +614,12 @@ sg29
 g30
 ((I2016
 I12
-I5
-I21
-I40
-I1
-I0
-I340
+I7
+I23
+I30
+I39
+I2
+I342
 I0
 tp200
 (dp201
@@ -655,7 +655,7 @@ Tiddler
 p211
 (dp212
 g25
-VGray vinyl, soft walls. Your computer hums gently under your desk. A laminated paper is taped to the outside of the cubicle. It reads "$fname $lname - Junior Acquisition Agent" in all capital letters.\u000a\u000a[[Sift through the papers on your desk.|papers]]\u000a<<nobr>>\u000a<<if $loggedin is false and $haspcacct is true>>[[Log in to the computer.|login]]\u000a<<elseif $loggedin is true>>[[Use the computer.|pc]]\u000a<<else>>[[Log in to the computer.|login for the first time]]<</if>>\u000a<</nobr>>\u000a[[Take a break.|take a break]]
+VGray vinyl, soft walls. Your computer hums gently under your desk. A laminated paper is taped to the outside of the cubicle. It reads "$fname $lname - Junior Acquisition Agent" in all capital letters.\u000a\u000a[[Sift through the papers on your desk.|papers]]\u000a<<nobr>>\u000a<<if $loggedin is false and $haspcacct is true>>[[Log in to the computer.|login]]\u000a<<elseif $loggedin is true>>[[Use the computer.|pc]]\u000a<<else>>[[Log in to the computer.|login for the first time]]<</if>>\u000a<</nobr>>\u000a<<if $ee_car is false or $ee_lights is false>>[[Take a break.|take a break]]<</if>>
 p213
 sg27
 Vdesk
@@ -664,12 +664,12 @@ sg29
 g30
 ((I2016
 I12
-I6
-I0
-I47
-I55
-I1
-I341
+I7
+I23
+I26
+I34
+I2
+I342
 I0
 tp215
 (dp216
@@ -852,7 +852,7 @@ I00
 sg19
 (lp272
 F10.0
-aF430.0
+aF1130.0
 asg21
 (itiddlywiki
 Tiddler
@@ -2020,7 +2020,7 @@ Tiddler
 p626
 (dp627
 g25
-VThis is the end of the demo. \u000a\u000aIn the finished story, you will have many more documents to read and at the end you will have a special encounter based on your responses to each document. \u000a\u000aYou had one job - how well did you do?\u000a\u000aNote: There are a few easter eggs and different responses to various questions. I recommend playing again!\u000a\u000a''Questions for the reader/player:''<ul>\u000a<li> Did you have a clear idea of what to do/how to progress the story?</li>\u000a<li> Were you frustrated by anything?</li>\u000a<li> How long did it take you to reach this page?</li>\u000a<li> How did the formatting affect your experience?</li>\u000a<li> Would music add more to the story or would you find it distracting?</li></ul>\u000a\u000aThanks!\u000a\u000a-Phil
+V
 p628
 sg27
 Vsubmit
@@ -2028,13 +2028,13 @@ p629
 sg29
 g30
 ((I2016
-I11
-I21
-I0
-I47
-I6
-I0
-I326
+I12
+I7
+I23
+I40
+I33
+I2
+I342
 I0
 tp630
 (dp631
@@ -2070,7 +2070,7 @@ Tiddler
 p641
 (dp642
 g25
-V<<audio "chase" volume .1 play goto "ENDSCREEN">><<linkappend "Start the car.">>\u000a<<set $ee_car = true>>\u000aYou slide the key into the ignition and turn it gently. The dash lights up.\u000a<<audio ":playing" volume .1 fadeto .3>>\u000a<<linkappend "Floor it.">>\u000a\u000a<<audio ":playing" volume .3 fadeto .6>><<shakescreen 12s>>The coupe's engine purrs louder under your foot, challenging you to accelerate further. <<timed 4s t8n>><<next>><<next>>\u000a\u000aYour knuckles whiten and your sinuses clear. <<next>>Los Angeles blurs into neon tracers under a static moon. <<next>>The rush creeps up your spine and pumps adrenaline through your eyes. <<next>>[placeholder]. <<next>>[placeholder]. <<next>> [placeholder]. \u000a\u000a<<next 8s>>What would your mother think?\u000a<</timed>><</linkappend>><</linkappend>>\u000a\u000a\u000a
+V<<audio "chase" volume .1 play>><<linkappend "Start the car.">>\u000a<<set $ee_car = true>>\u000aYou slide the key into the ignition and turn it gently. The dash lights up.\u000a<<audio ":playing" volume .1 fadeto .3>>\u000a<<linkappend "Floor it.">>\u000a\u000a<<audio ":playing" volume .3 fadeto .6>><<shakescreen 12s>>The coupe's engine purrs louder under your foot, challenging you to accelerate further. <<timed 4s t8n>><<next>><<next>>\u000a\u000aYour knuckles whiten and your sinuses clear. <<next>>Los Angeles blurs into neon tracers under a static moon. <<next>>The rush creeps up your spine and pumps adrenaline through your eyes. <<next>>What would your mother think? \u000a\u000a<<next>>She'll never know. \u000a<<next>>She didn't know about your depression either.\u000a<<next>>[[Are you even listening to me?|stop car chase]]\u000a<</timed>><</linkappend>><</linkappend>>\u000a\u000a\u000a
 p643
 sg27
 Vcrazy car chase
@@ -2079,12 +2079,12 @@ sg29
 g30
 ((I2016
 I12
-I6
-I1
-I58
-I4
-I1
-I341
+I7
+I23
+I17
+I52
+I2
+I342
 I0
 tp645
 (dp646
@@ -2326,7 +2326,7 @@ Tiddler
 p719
 (dp720
 g25
-VYou stroll to the break room to stretch your legs. You squint in the harsh artificial light. The furniture and appliances are at least ten years old, but show almost no signs of wear. The refrigerator hums quietly to your left. Across from it is a door that bears a sign that reads "PARKING."\u000a\u000a[[You have a feeling you should return to your desk.|walk to desk]]\u000a<<if $ee_lights is false or $ee_car is false>><<linkappend "Then again, you deserve a break, don't you?">>\u000a\u000aYou reason that it would be alright to spend a little bit longer in the break room as long as you make up for it some other time.\u000a\u000a<<if $ee_lights is false>>[[Turn off the lights.|lights out]]\u000a<</if>><<if $ee_car is false>>[[Use the door.|parking lot]]<</if>><</linkappend>><<else>><<linkappend "Check the fridge for snacks.">>\u000a\u000aThe shelves are stained with God knows what, but are otherwise bare. Is there a vending machine around here?<</linkappend>><</if>>\u000a
+V<<silently>>\u000a<<set $takeabreak = ["Then again, you deserve a break, don't you?","But what's another 5 minutes?","As a reminder, you're alotted two 15 minute breaks per day by law. Use one now?"]>>\u000a<<set $breakphrase = $takeabreak.random()>>\u000a<</silently>>You stroll to the break room to stretch your legs. You squint in the harsh artificial light. The furniture and appliances are at least ten years old, but show only minor signs of wear. The refrigerator hums quietly to your left. Across from it is a door that bears a sign that reads "PARKING."\u000a\u000a[[You have a feeling you should return to your desk.|walk to desk]]\u000a<<if $ee_lights is false or $ee_car is false>><<linkappend $breakphrase>>\u000a\u000aYou reason that it would be alright to spend a little bit longer in the break room as long as you make up for it some other time.\u000a\u000a<<if $ee_lights is false>>[[Turn off the lights.|lights out]]\u000a<</if>><<if $ee_car is false>>[[Use the door.|parking lot]]<</if>><</linkappend>><<else>><<linkappend "Check the fridge for snacks.">>\u000a\u000aThe shelves are stained with God knows what, but are otherwise bare. Is there a vending machine around here?<</linkappend>><</if>>\u000a
 p721
 sg27
 Vtake a break
@@ -2335,12 +2335,12 @@ sg29
 g30
 ((I2016
 I12
-I6
-I1
-I40
-I55
-I1
-I341
+I7
+I23
+I38
+I38
+I2
+I342
 I0
 tp723
 (dp724
@@ -2509,7 +2509,7 @@ g18
 I00
 sg19
 (lp776
-F1270.0
+F1550.0
 aF290.0
 asg21
 (itiddlywiki
@@ -2517,21 +2517,21 @@ Tiddler
 p777
 (dp778
 g25
-V
+VThe lobby is exactly as it was this morning, but it is devoid of people.\u000a\u000aYou retrace Kandice's steps, shuffling past cubicles and down hallways. You look for a clock, but the walls are bare. Everything is bare.\u000a\u000aYou arrive back at the scanner that locks your work area.\u000a\u000a[[Scan your finger.|scanner]]
 p779
 sg27
-Vlobby
+Vempty lobby
 p780
 sg29
 g30
 ((I2016
 I12
-I6
-I0
-I8
-I16
-I1
-I341
+I7
+I23
+I22
+I41
+I2
+I342
 I0
 tp781
 (dp782
@@ -2658,11 +2658,11 @@ tp819
 Rp820
 sbsa(dp821
 g18
-I00
+I01
 sg19
 (lp822
-F1130.0
-aF430.0
+F1550.0
+aF570.0
 asg21
 (itiddlywiki
 Tiddler
@@ -2816,14 +2816,14 @@ I00
 sg19
 (lp869
 F10.0
-aF1130.0
+aF150.0
 asg21
 (itiddlywiki
 Tiddler
 p870
 (dp871
 g25
-V/% Place your story's setup code in this passage.\u000aAny macros in this passage will be run before the Start passage (or any passage you wish to Test Play) is run. %/\u000a<<set $ee_lights = false>>\u000a<<set $ee_car = false>>\u000a<<cacheaudio "intromusic1" "Audio/Kylian Rebour - Fields.mp3">>\u000a<<cacheaudio "intromusic2" "Audio/Game of Thrones S6 Finale (Light of the Seven) - Piano Sheets + Tutorial.mp3">>\u000a<<cacheaudio "pc_login" "Audio/Computer_Magic-Microsift-1901299923.wav">>\u000a<<cacheaudio "pc_error" "Audio/Computer Error Alert-SoundBible.com-783113881.wav">>\u000a<<cacheaudio "pc_logout" "Audio/sms-alert-3-daniel_simon.wav">>\u000a<<cacheaudio "scan" "Audio/Robot_blip-Marianne_Gagnon-120342607.wav">>\u000a<<cacheaudio "chase" "Audio/Darkness_short.mp3">>\u000a<<cacheaudio "jumpscare" "Audio/Jump Scares Sound Effects.mp3">>\u000a<<cacheaudio "doorclose" "Audio/Door Close-SoundBible.com-1305692306.wav">>\u000a\u000a<<createplaylist "introplaylist">>\u000a	<<track "intromusic1" volume .3>>\u000a	<<track "intromusic2" volume .4>>\u000a<</createplaylist>>\u000a<<waitforaudio>>
+V/% Place your story's setup code in this passage.\u000aAny macros in this passage will be run before the Start passage (or any passage you wish to Test Play) is run. %/\u000a<<set $ee_lights = false>>\u000a<<set $ee_car = false>>\u000a<<set $doclist = \u000a	["shining_shimmering_splendid.txt",\u000a	"autobiography.doc",\u000a	"automated_transcript_11062016",\u000a	"Complete version of The Star-Spangled Banner showing spelling and punctuation.pdf",\u000a	"fuck you carol"]>>\u000a\u000a<<cacheaudio "intromusic1" "Audio/Kylian Rebour - Fields.mp3">>\u000a<<cacheaudio "intromusic2" "Audio/Game of Thrones S6 Finale (Light of the Seven) - Piano Sheets + Tutorial.mp3">>\u000a<<cacheaudio "pc_login" "Audio/Computer_Magic-Microsift-1901299923.wav">>\u000a<<cacheaudio "pc_error" "Audio/Computer Error Alert-SoundBible.com-783113881.wav">>\u000a<<cacheaudio "pc_logout" "Audio/sms-alert-3-daniel_simon.wav">>\u000a<<cacheaudio "scan" "Audio/Robot_blip-Marianne_Gagnon-120342607.wav">>\u000a<<cacheaudio "chase" "Audio/Darkness_short.mp3">>\u000a<<cacheaudio "jumpscare" "Audio/Jump Scares Sound Effects.mp3">>\u000a<<cacheaudio "doorclose" "Audio/Door Close-SoundBible.com-1305692306.wav">>\u000a\u000a<<createplaylist "introplaylist">>\u000a	<<track "intromusic1" volume .3>>\u000a	<<track "intromusic2" volume .4>>\u000a<</createplaylist>>\u000a<<waitforaudio>>
 p872
 sg27
 VStoryInit
@@ -2832,12 +2832,12 @@ sg29
 g30
 ((I2016
 I12
-I6
-I1
-I52
-I57
-I1
-I341
+I7
+I23
+I41
+I39
+I2
+I342
 I0
 tp874
 (dp875
@@ -2860,10 +2860,162 @@ tp879
 (dp880
 tp881
 Rp882
+sbsa(dp883
+g18
+I00
+sg19
+(lp884
+F1550.0
+aF150.0
+asg21
+(itiddlywiki
+Tiddler
+p885
+(dp886
+g25
+V<<audio ":playing" fadeout>>"You okay there, buddy?" \u000a\u000a<<linkappend "Someone shoves your shoulder.">>\u000a\u000aYou take a step and regain your composure. It's the security officer from out front. "What do you think you're doing out here, guy? Can you hear me? Let me see your ID."\u000a\u000a<<linkappend "Show him your lanyard.">>\u000a\u000a"Y-yes, of course, Officer. Right here," you say, holding your ID out for him to inspect. Your voice comes out shaky, hopefully not in a suspicious way. Caught daydreaming, and on your first day. \u000a\u000a<<linkappend "Mutter something about the break room door.">>\u000a\u000a"You get yourself locked out? Ah, happens all the time." The officer's gruffness softens a bit and he leads you back to the lobby.\u000a\u000a[[Step inside.|empty lobby]]\u000a<</linkappend>>\u000a<</linkappend>>\u000a<</linkappend>>
+p887
+sg27
+Vstop car chase
+p888
+sg29
+g30
+((I2016
+I12
+I7
+I23
+I24
+I18
+I2
+I342
+I0
+tp889
+(dp890
+tp891
+Rp892
+sg35
+(lp893
+Vnight
+p894
+asg37
+g30
+((I2016
+I12
+I7
+I22
+I51
+I45
+I2
+I342
+I0
+tp895
+(dp896
+tp897
+Rp898
+sbsa(dp899
+g18
+I00
+sg19
+(lp900
+F1410.0
+aF290.0
+asg21
+(itiddlywiki
+Tiddler
+p901
+(dp902
+g25
+V<<audio "scan" play>><<goto "walk to desk">>
+p903
+sg27
+Vscanner
+p904
+sg29
+g30
+((I2016
+I12
+I7
+I23
+I17
+I2
+I2
+I342
+I0
+tp905
+(dp906
+tp907
+Rp908
+sg35
+(lp909
+sg37
+g30
+((I2016
+I12
+I7
+I23
+I16
+I46
+I2
+I342
+I0
+tp910
+(dp911
+tp912
+Rp913
+sbsa(dp914
+g18
+I00
+sg19
+(lp915
+F990.0
+aF430.0
+asg21
+(itiddlywiki
+Tiddler
+p916
+(dp917
+g25
+Vatmosphere 360 spec sheet
+p918
+sg27
+Vfuck you carol
+p919
+sg29
+g30
+((I2016
+I12
+I7
+I23
+I43
+I8
+I2
+I342
+I0
+tp920
+(dp921
+tp922
+Rp923
+sg35
+(lp924
+sg37
+g30
+((I2016
+I12
+I7
+I23
+I42
+I50
+I2
+I342
+I0
+tp925
+(dp926
+tp927
+Rp928
 sbsasS'scale'
-p883
+p929
 F1.0
 sS'snapping'
-p884
+p930
 I01
 ss.
